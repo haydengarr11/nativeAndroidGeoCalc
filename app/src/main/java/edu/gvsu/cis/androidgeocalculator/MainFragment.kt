@@ -56,6 +56,13 @@ class MainFragment : Fragment() {
             distanceUnits = z.distanceUnits
             bearingUnits = z.bearingUnits
         })
+        viewModel.selected.observe(this.viewLifecycleOwner, Observer { z ->
+            p1Lat?.setText(z.origLat)
+            p1Lng?.setText(z.origLng)
+            p2Lat?.setText(z.destLat)
+            p2Lng?.setText(z.destLng)
+            updateScreen()
+        })
         viewModel.calcData.observe(this.viewLifecycleOwner, Observer { z ->
             p1Lat?.setText(z.p1Lat)
             p1Lng?.setText(z.p1Lng)
