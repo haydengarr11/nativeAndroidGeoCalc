@@ -93,8 +93,18 @@ class MainFragment : Fragment() {
                 navCtrl?.navigate(R.id.action_main2settings)
                 return true
             }
+            R.id.action_history -> {
+                p1Lat?.clearFocus()
+                p1Lng?.clearFocus()
+                p2Lat?.clearFocus()
+                p2Lng?.clearFocus()
+                navCtrl?.navigate(R.id.action_main2history)
+                return true
+            }
             else -> super.onOptionsItemSelected(item)
         }
+
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
