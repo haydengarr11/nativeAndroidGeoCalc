@@ -13,6 +13,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import edu.gvsu.cis.androidgeocalculator.placeholder.HistoryContent
+import org.joda.time.DateTime
 import java.lang.Exception
 import java.math.RoundingMode
 import java.text.DecimalFormat
@@ -139,6 +141,10 @@ class MainFragment : Fragment() {
             val bStr = "Bearing: " + df.format(b) + " " + bearingUnits
             bearing!!.text = bStr
             hideKeyboard()
+            HistoryContent.addItem(
+                HistoryContent.HistoryItem(
+                    "$lat1", "$lng1", "$lat2", "$lng2", DateTime.now()))
+
         } catch (e: Exception) {
             return
         }

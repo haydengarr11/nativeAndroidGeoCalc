@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DividerItemDecoration
 import edu.gvsu.cis.androidgeocalculator.placeholder.HistoryContent
 
 /**
@@ -39,6 +40,8 @@ class HistoryFragment : Fragment() {
                     else -> GridLayoutManager(context, columnCount)
                 }
                 adapter = MyHistoryItemRecyclerViewAdapter(HistoryContent.ITEMS)
+                addItemDecoration(DividerItemDecoration(context,
+                    DividerItemDecoration.VERTICAL))
             }
         }
         return view
